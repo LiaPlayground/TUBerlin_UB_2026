@@ -91,7 +91,7 @@ Die drei Miniaturen sollen einen Eindruck vermitteln, wie LiaScript die Wissensv
 > **Definition** Metadaten sind beschreibende Daten *über* einen bibliografischen Datensatz — Titel, Autor, Verlag, Schlagwort. Aber wie genau werden diese Daten strukturiert, damit sie von Menschen und Maschinen verstanden werden? Und wie sieht das in der Praxis aus?
 
 > [!NOTE]
-> **Worauf Sie in diesem Abschnitt achten sollten:** Sie begegnen demselben Sachverhalt gleich in *drei verschiedenen Darstellungen* — Video, eingebettete Spezifikationsseite und Code-Block. Alle drei liegen auf *dieser* Seite. Das ist gemeint, wenn LiaScript verspricht, *Wissensvermittlung ohne Medienbrüche* zu ermöglichen: keine Tab-Wechsel, keine Tool-Sprünge, kein Kontextverlust.
+> **Worauf Sie in diesem Abschnitt achten sollten:** Sie begegnen demselben Sachverhalt in *mehreren Darstellungen* — einem erklärenden Video und konkreten Metadaten-Beispielen als Code. Alle liegen auf *dieser* Seite. Das ist gemeint, wenn LiaScript verspricht, *Wissensvermittlung ohne Medienbrüche* zu ermöglichen: keine Tab-Wechsel, keine Tool-Sprünge, kein Kontextverlust.
 
 ### Einstieg per Video
 
@@ -104,54 +104,75 @@ Bevor wir in die Details gehen, ein kurzer Überblick zum Thema:
 
 ### Abstraktion und Strukturierung
 
-Offenbar ist es nicht genug, einfach nur Label für Titel, Autor und Verlag zu definieren. Es braucht eine Systematik, damit die Daten von verschiedenen Bibliotheken in derselben Weise interpretiert werden können.
+Offenbar ist es nicht genug, einfach nur Label für Titel, Autor und Verlag zu definieren. Es braucht eine Systematik, damit die Daten von verschiedenen Bibliotheken und Repositorien in derselben Weise interpretiert werden können.
 
-> [!NOTE]
-> Die nachfolgende, eingebettete Seite zeigt die offizielle Definition des Dublin-Core-Elements `creator` — ein Beispiel dafür, wie ein standardisiertes Schema die Interpretation von Metadaten erleichtert.
+Welche Felder ein OER-Datensatz haben sollte, legen **Metadatenprofile** fest — etwa das **LOM-Profil für Hochschul-OER** der [DINI-AG-KIM](https://dini-ag-kim.github.io/hs-oer-lom-profil/latest/), das mehrere deutsche Hochschul- und Bibliotheks-Repositorien gemeinsam pflegen und aus dem sich auch der OER-Suchindex [OERSI](https://oersi.org) speist. Statt die Spezifikation durchzulesen, prüfen wir das lieber am konkreten Fall.
 
-Das Laden des Frames kann einen Moment dauern, da die Seite von der Internet Archive Wayback Machine geholt wird. Bitte haben Sie einen Moment Geduld.
-
-<iframe src="https://web.archive.org/web/2024/https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/creator/" width="100%" height="500" style="border: 1px solid #ccc; border-radius: 4px;"></iframe>
-
-> **Mini-Aufgabe:** Klicken Sie in den eingebetteten Frame oben (er ist scrollbar) und gehen Sie zum Eintrag **"Equivalent Property"**. Dort ist `dc:creator` mit einer Property aus einem *anderen* Vokabular formal gleichgesetzt — wie heißt sie, und aus welchem Vokabular kommt sie?
-
-{{1}}
-> **Auflösung:** `dc:creator` ist äquivalent zu `foaf:maker` — einer Property aus dem **FOAF**-Vokabular ("Friend of a Friend"), das Personen und ihre Werke im Web beschreibt.
->
-> **Warum das wichtig ist:** Im offenen Web existieren mehrere Vokabulare für ähnliche Konzepte (Dublin Core, FOAF, schema.org, BIBFRAME …). Damit Daten aus verschiedenen Welten zusammenfließen können, deklarieren die Vokabulare explizit, wann zwei Begriffe *dasselbe* meinen. Genau diese Äquivalenzen sind das Rückgrat von Linked Data — und einer der Gründe, warum kontrollierte Vokabulare in Bibliotheken über das eigene Katalogsystem hinaus wirken.
-
-### Beispiel für einen Dublin-Core-Datensatz
-
-Beschrieben als Dublin-Core-Datensatz sieht dieser Kurs so aus:
+> **Mini-Aufgabe:** Und jetzt wird es konkret — unten sehen Sie den Metadatensatz **genau dieses Kurses** (den Sie gerade lesen!), beschrieben nach dem **LOM-Profil für Hochschul-OER**. Stellen Sie sich vor, eine Kollegin aus einem anderen Haus möchte dieses Material **nachnutzen und anpassen**. Lesen Sie den Satz durch: Ist die Beschreibung dafür *vollständig* — oder fehlt eine entscheidende Kategorie?
 
 ```xml
-<head profile="http://dublincore.org/documents/dcq-html/">
-  <title>LiaScript im Bibliotheksalltag</title>
-  <link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/"/>
-  <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<lom>
+  <general>
+    <title><langstring>LiaScript im Bibliotheksalltag</langstring></title>
+    <language>de</language>
+  </general>
 
-  <meta name="DC.title"       content="LiaScript im Bibliotheksalltag"/>
-  <meta name="DC.creator"     content="Zug, Sebastian"/>
-  <meta name="DC.creator"     content="Dietrich, André"/>
-  <meta name="DC.publisher"   content="TU Berlin, Universitätsbibliothek"/>
-  <meta name="DC.date"        content="2026-07-24"/>
-  <meta name="DC.type"        scheme="DCTERMS.DCMIType" content="InteractiveResource"/>
-  <meta name="DC.format"      content="text/markdown (LiaScript)"/>
-  <meta name="DC.language"    content="de"/>
-  <meta name="DC.subject"     content="Open Educational Resources"/>
-  <meta name="DC.subject"     content="Bibliothekspraxis"/>
-  <meta name="DC.subject"     content="Datenkompetenz; Metadaten; Recherchekompetenz"/>
-
-  <meta name="DCTERMS.audience"       content="Bibliothekarinnen und Bibliothekare"/>
-  <meta name="DCTERMS.educationLevel" content="Berufliche Fortbildung"/>
-  <meta name="DCTERMS.license"        scheme="DCTERMS.URI"
-        content="https://creativecommons.org/licenses/by-sa/4.0/"/>
-  <meta name="DCTERMS.source"         content="https://github.com/LiaPlayground/TUBerlin_UB_2026"/>
-  <meta name="DCTERMS.hasVersion"     content="0.1.0"/>
-</head>
+  <lifecycle>
+    <version><langstring>0.1.0</langstring></version>
+    <contribute>
+      <role><value>author</value></role>
+      <centity><vcard>Sebastian Zug</vcard></centity>
+      <date><datetime>2026-07-24</datetime></date>
+    </contribute>
+    <contribute>
+      <role><value>author</value></role>
+      <centity><vcard>André Dietrich</vcard></centity>
+    </contribute>
+  </lifecycle>
+</lom>
 ```
 
-> **Lesart:** Jedes `<meta name="DC.xxx">`-Element ist eine maschinenlesbare Aussage über diesen Kurs — eingebettet in den HTML-Header der Seite, lesbar für Suchmaschinen, OER-Repositorien und Linked-Data-Werkzeuge. Genau diese Form von Metadaten macht ein Lernmaterial als *Open Educational Resource* im Web auffindbar, zitierbar und nachnutzbar.
+> [!TIP]
+> Gehen Sie die fünf V-Freiheiten im Kopf durch: *verwenden, verarbeiten, vermischen, verbreiten* — was davon dürfte die Kollegin auf Basis dieses Satzes überhaupt rechtssicher tun?
+
+### Lösung
+
+> **Auflösung:** Es fehlt die **Rights-Kategorie** — also die Lizenzangabe. `General` (Titel, Sprache) und `Lifecycle` (Version, Autoren, Datum) sind da, aber es gibt kein `<rights>`-Element. Ohne eine ausdrückliche offene Lizenz (z. B. `https://creativecommons.org/licenses/by-sa/4.0/`) ist *rechtlich unklar*, ob das Material überhaupt bearbeitet oder weitergegeben werden darf. Ohne diese Angabe ist es **streng genommen gar kein OER** — denn die V-Freiheiten *verarbeiten*, *vermischen* und *verbreiten* setzen eine offene Lizenz voraus.
+>
+> **Warum das wichtig ist:** „Frei zugänglich im Netz" und „offen lizenziert" sind zwei verschiedene Dinge. Ein Material ohne Lizenzangabe gilt urheberrechtlich als *„alle Rechte vorbehalten"* — auffindbar, aber nicht nachnutzbar. Genau hier liegt eine Kernkompetenz der Bibliothek: Materialien nicht nur zugänglich, sondern rechtssicher *nachnutzbar* zu machen. Die Rights-Kategorie ist deshalb das Feld, das eine OER überhaupt erst zur OER macht.
+
+Zum Vergleich derselbe Kurs — diesmal **mit** der eben vermissten `<rights>`-Kategorie. Und tatsächlich: Werfen Sie einen Blick in die Markdown-Quelle dieses Kurses (oder klicken Sie unten auf das i-Icon) — die Lizenz `CC BY-SA 4.0` steht dort im `attribute`-Feld. Achten Sie darauf, wie sie hier als Klartext *und* als maschinenlesbare URL hinterlegt ist:
+
+```xml
+<lom>
+  <general>
+    <title><langstring>LiaScript im Bibliotheksalltag</langstring></title>
+    <language>de</language>
+  </general>
+
+  <lifecycle>
+    <version><langstring>0.1.0</langstring></version>
+    <contribute>
+      <role><value>author</value></role>
+      <centity><vcard>Sebastian Zug</vcard></centity>
+      <date><datetime>2026-07-24</datetime></date>
+    </contribute>
+    <contribute>
+      <role><value>author</value></role>
+      <centity><vcard>André Dietrich</vcard></centity>
+    </contribute>
+  </lifecycle>
+
+  <rights>
+    <copyrightandotherrestrictions>
+      <value>yes</value>
+    </copyrightandotherrestrictions>
+    <description>
+      <langstring xml:lang="x-t-cc-url">https://creativecommons.org/licenses/by-sa/4.0/</langstring>
+    </description>
+  </rights>
+</lom>
+```
 
 > [!TIP]
 > Klicken Sie rechts oben in der Ecke auf das **i-Icon** (ℹ️), um die Metadaten dieses Kurses in einer übersichtlichen Darstellung zu sehen.
@@ -188,7 +209,7 @@ Verschaffen wir uns zunächst einen Überblick - ein fiktives Beispiel aus einer
 > [!TIP]
 > Manchmal reicht es nicht, Daten zu visualisieren - wir wollen auch Kennzahlen berechnen, um die Daten zu interpretieren. In diesem Beispiel wollen wir die Vormerkungsquote berechnen - also den Anteil der Vormerkungen an den Ausleihen pro Monat.
 >
-> Wir haben Ihnen den Code schon vorgegeben — führen Sie ihn zunächst über den **Ausführen-Button** (▶, unten links am Code-Block) aus. Anschließend aktivieren Sie die Berechnung der Vormerkungsquote: In Zeile 14 beginnt die Anweisung mit einem `#`-Zeichen (Python-Kommentar). Löschen Sie genau dieses eine `#` direkt vor `daten[...]` und führen Sie den Code erneut aus.
+> Wir haben Ihnen den Code schon vorgegeben — führen Sie ihn zunächst über den **Ausführen-Button** (`</>`, unten links am Code-Block) aus. Anschließend aktivieren Sie die Berechnung der Vormerkungsquote: In Zeile 14 beginnt die Anweisung mit einem `#`-Zeichen (Python-Kommentar). Löschen Sie genau dieses eine `#` direkt vor `daten[...]` und führen Sie den Code erneut aus.
 
 ```python        python_example.py
 import pandas as pd

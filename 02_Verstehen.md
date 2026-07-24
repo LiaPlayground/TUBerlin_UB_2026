@@ -20,6 +20,7 @@ comment:  Phase 2 des Workshops "Interaktive OER mit LiaScript" an der
 repository: https://github.com/LiaPlayground/TUBerlin_UB_2026
 
 import:    https://raw.githubusercontent.com/LiaTemplates/LiveEdit-Embeddings/refs/tags/0.0.1/README.md
+           https://raw.githubusercontent.com/LiaTemplates/Chat-Simulation/main/README.md
 
 attribute: Interaktive OER mit LiaScript
            von Sebastian Zug und André Dietrich
@@ -137,7 +138,19 @@ Für **Lehr-/Schulungsmaterial** hat Wikitext aber entscheidende Schwächen:
 > [!IMPORTANT]
 > **LiaScript ist Markdown — erweitert um genau die Elemente, die für interaktive Lehre fehlen.**
 
-Markdown kennen Sie wahrscheinlich schon aus GitHub-READMEs, aus Obsidian oder aus dem Wikipedia-Editor. LiaScript nimmt diese vertraute Textsprache und ergänzt sie um **drei Kernkonzepte**.
+Markdown kennen Sie wahrscheinlich schon aus GitHub-READMEs, aus Obsidian oder aus Messenger-Chats — überall, wo `**fett**` und `*kursiv*` funktionieren, steckt Markdown dahinter:
+
+``` javascript @CHAT
+[
+    {name: "Anja", message: "Wie kann ich in diesem Chat einzelne Wörter 'betonen'?"},
+    {name: "Ben", message: "Setz einfach `**` vor und hinter das Wort oder den Satz, den du hervorheben möchtest!"},
+    {name: "Kim", message: "Oder ein einzelnes Sternchen für kursiv!"},
+    {name: "Anja", message: "**Alle mal herhören!**"},
+    {name: "Anja", message: "Witzig — drei Sternchen für fett *und* kursiv: ***Alle mal herhören***!"}
+]
+```
+
+> LiaScript nimmt diese vertraute Textsprache und ergänzt sie um **drei Kernkonzepte**.
 
 ### Konzept 1 — Trennung von Inhalt und Darstellung
 
@@ -182,13 +195,18 @@ Welcher Boole'sche Operator verkleinert die Treffermenge?
 - [( )] OR
 - [(X)] AND
 - [( )] Beide
+****************
+Genau — `AND` verlangt, dass *beide* Begriffe vorkommen, und schränkt die Treffermenge damit ein.
+****************
 
 __Animationsstufen__
 
 Klicken Sie sich durch:
 
 {{1}} Erst kommt diese Zeile,
+
 {{2}} dann diese,
+
 {{3}} und schließlich diese.
 ```
 

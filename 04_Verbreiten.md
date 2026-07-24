@@ -50,7 +50,63 @@ Sie haben in [Phase 3](03_Anwenden.md) Ihren eigenen Kurs gebaut — jetzt geht 
 > [!IMPORTANT]
 > Der LiveEditor kann Ihren Kurs inzwischen **direkt zu GitHub** veröffentlichen und aktualisieren — Import, Publish, Push und Pull, alles aus dem Editor heraus. Ein lokal installiertes `git` brauchen Sie dafür **nicht** mehr.
 
-Danach ordnen wir kurz die weiteren Wege ein (Data-URI, ZIP, SCORM), damit Sie für jedes Szenario den passenden kennen.
+Danach ordnen wir kurz die weiteren Wege ein (Data-URI, ZIP, SCORM), damit Sie für jedes Szenario den passenden kennen. Vorweg werfen wir aber noch einen Blick darauf, wie **KI** Ihnen beim *Erstellen* der Kurse hilft.
+
+## Vorab: KI als Co-Autorin für LiaScript-Kurse
+
+Viele der Handgriffe, die Sie in [Phase 3](03_Anwenden.md) selbst gemacht haben, übernehmen inzwischen KI-Assistenten. Vor zwei Jahren hieß die Antwort auf „Wie schreibe ich einen LiaScript-Kurs?" noch: *„Cheat Sheet öffnen, Syntax nachschlagen, ausprobieren."* Heute heißt sie zunehmend: *„Beschreiben Sie der KI, was Sie vermitteln wollen — und prüfen Sie die Vorlage."*
+
+> [!NOTE]
+> **Was sich nicht geändert hat:** Sie entscheiden, *was* vermittelt wird, *welches Beispiel* aus dem Bibliotheksalltag passt, *welche Differenzierung* sinnvoll ist. Die KI nimmt nur die **Syntax-Last** ab — sie weiß, wie ein Quiz, eine Formel oder eine Animation in LiaScript geschrieben werden.
+
+### Zwei Stufen der KI-Nutzung
+
+           {{0-1}}
+**************************************
+
+**Stufe 1 — Web-KI mit angehängter Skill-Datei**
+
+Die niedrigschwellige Variante: Eine einzige Markdown-Datei, [**LiaSkill**](https://github.com/LiaScript/LiaSkill), wird einer Web-KI als Kontext mitgegeben — Claude, ChatGPT, Gemini oder Mistral, egal welche. Die KI „lernt" daraus die vollständige LiaScript-Syntax und kann anschließend komplette Kurse aus Klartext-Beschreibungen erzeugen.
+
+| Schritt | Was tun?                                                                                            |
+| ------- | --------------------------------------------------------------------------------------------------- |
+| 1       | [SKILL.md](https://github.com/LiaScript/LiaSkill/blob/main/SKILL.md) als Datei in den Chat ziehen   |
+| 2       | Beschreiben: *„Erstelle eine Schulung zu …, Zielgruppe …, mit … Quizzen und … Differenzierung."*    |
+| 3       | Ergebnis im [LiveEditor](https://liascript.github.io/LiveEditor/) prüfen, anpassen                  |
+
+> **Geeignet für:** Kolleginnen und Kollegen, die heute schon ChatGPT oder Copilot nutzen — kein neues Werkzeug, nur ein angehängtes Dokument.
+
+**************************************
+
+           {{1}}
+**************************************
+
+**Stufe 2 — Geführter Prozess in VS Code: der Teaching-Agent**
+
+Die professionelle Variante: [**Teaching-Agent**](https://github.com/LiaScript/teaching-agent) führt Sie in **VS Code mit GitHub Copilot** durch einen vollständigen, strukturierten Kursentwurf — vom Lernziel über die Didaktik bis zum fertigen Material. Statt eines einzelnen Prompts entsteht ein iterativer Dialog mit definierten Phasen:
+
+```ascii
+  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+  │  FOUNDATION     │ →  │  DIDACTICS      │ →  │  PLANNING       │
+  │  Zielgruppe,    │    │  Lehrmethoden,  │    │  Agenda,        │
+  │  Lernziele,     │    │  Persona,       │    │  Sitzungs-      │
+  │  Umfang         │    │  Stil           │    │  struktur       │
+  └─────────────────┘    └─────────────────┘    └─────────────────┘
+            │                                              │
+            ↓                                              ↓
+  ┌─────────────────┐    ┌─────────────────┐
+  │  DEVELOPMENT    │ ←  │  FINALIZATION   │
+  │  Sitzungen      │    │  Validierung,   │
+  │  ausarbeiten    │    │  Export-Bundle  │
+  └─────────────────┘    └─────────────────┘
+```
+
+> **Geeignet für:** alle, die regelmäßig Schulungsmaterial entwickeln und Wert auf didaktische Konsistenz legen — Fortbildungsreihen, Einführungsveranstaltungen, modulare Schulungskonzepte.
+
+**************************************
+
+> [!TIP]
+> **Der professionelle Editier-Weg im Hintergrund:** Sowohl LiaSkill (Stufe 1) als auch der Teaching-Agent (Stufe 2) laufen am runden Ende auf **VS Code mit GitHub Copilot** oder **GitHub Codespaces** (im Browser, ohne lokale Installation) hinaus — mit Syntax-Highlighting, Versionskontrolle und KI-Unterstützung. Und damit sind wir beim Thema Verbreiten: Wo diese Werkzeuge arbeiten, ist GitHub schon zur Hand.
 
 ## Der Schwerpunkt: GitHub direkt aus dem LiveEditor
 
@@ -182,7 +238,7 @@ Mit dem [LiaScript-Exporter](https://liascript.github.io/exporter/) erzeugen Sie
 
 ## Zusammengefasst
 
-> [!TIP]
+> 0. **KI als Co-Autorin:** LiaSkill (Datei an die Web-KI anhängen) oder Teaching-Agent (geführt in VS Code) nehmen die Syntax-Last ab — Sie entscheiden über Inhalt und Didaktik.
 > 1. **GitHub (Schwerpunkt):** Publish/Push/Pull/Import direkt aus dem Menü ⋮ → Tab „GitHub". Ein *Personal Access Token* ist die einzige Vorbereitung — fine-grained mit „Contents: Read/Write", für *Publish* ein klassischer Token mit `repo`-Scope.
 > 2. **Data-URI:** Ein Link — ideal für kurze Materialien und schnelle Vorschau.
 > 3. **ZIP-Export:** Die vollständige Quelle als Archiv — per Drag & Drop zurück in den LiveEditor.
