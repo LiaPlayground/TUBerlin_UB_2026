@@ -368,11 +368,7 @@ Zu den Distraktoren:
 
 </details>
 
-## Und wer nutzt das?
-
-> **Ein reales Beispiel:** Ferenz *et al.* (2024) beschreiben auf der NFDI4Energy-Konferenz einen LiaScript-Kurs zum Forschungsdaten­management, der produktiv beim Energie-Forschungszentrum Niedersachsen im Einsatz ist — und der u. a. ein Erklärvideo der Universität Gent einbindet, statt eines neu zu drehen.
->
-> [Kurs öffnen](https://liascript.github.io/course/?https://raw.githubusercontent.com/NFDI4Energy/EFZN_rdm/master/README.md) · [Repository](https://github.com/NFDI4Energy/EFZN_rdm)
+## Wie geht es weiter?
 
 Wie so etwas entsteht — und wie Sie selbst solche Kurse bauen und in die Community einbringen — schauen wir uns in den folgenden Phasen des Workshops an.
 
