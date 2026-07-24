@@ -77,7 +77,7 @@ Rückfragen eingeplant.
 | :------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Erleben**    | [DemoKurs](https://liascript.github.io/course/?https://raw.githubusercontent.com/LiaPlayground/TUBerlin_UB_2026/main/01_Erleben.md) außerhalb und innerhalb eines Lernmanagementsystems                            |
 | **Verstehen**  | [Konzepte hinter LiaScript](https://liascript.github.io/course/?https://raw.githubusercontent.com/LiaPlayground/TUBerlin_UB_2026/main/02_Verstehen.md) als OER                                                     |
-| **Anwenden**   | [Template](https://liascript.github.io/course/?https://raw.githubusercontent.com/LiaPlayground/TUBerlin_UB_2026/main/03_Anwenden.md) im LiaScript LiveEditor                                                       |
+| **Anwenden**   | [Template](https://liascript.github.io/LiveEditor/?/show/file/https://raw.githubusercontent.com/LiaPlayground/TUBerlin_UB_2026/refs/heads/main/03_Anwenden.md) im LiaScript LiveEditor                              |
 | **Verbreiten** | [Kurse teilen — mit Schwerpunkt GitHub](https://liascript.github.io/course/?https://raw.githubusercontent.com/LiaPlayground/TUBerlin_UB_2026/main/04_Verbreiten.md)                                                 |
 
 > [!TIP]
