@@ -52,6 +52,38 @@ Sie haben in [Phase 3](03_Anwenden.md) Ihren eigenen Kurs gebaut — jetzt geht 
 
 Danach ordnen wir kurz die weiteren Wege ein (Data-URI, ZIP, SCORM), damit Sie für jedes Szenario den passenden kennen. Vorweg werfen wir aber noch einen Blick darauf, wie **KI** Ihnen beim *Erstellen* der Kurse hilft.
 
+## Zum Aufwärmen: Die Systematik hinter den Medien-Befehlen
+
+Bevor es ums Teilen geht, ein kurzer Blick auf eine Eigenschaft, die genau dann wichtig wird: Zunächst sieht die LiaScript-Syntax für Medien vielleicht unübersichtlich aus — aber dahinter steckt ein **intuitives System**. Alle Medien wachsen aus *derselben* vertrauten Markdown-Link-Schreibweise; es kommen nur ein oder zwei Zeichen davor.
+
+Probieren Sie es in der eingebetteten Vorschau aus — **dieselbe Text-URL, vier verschiedene Ergebnisse**, je nachdem, welches Zeichen davorsteht (scrollen Sie im Rahmen bis nach unten):
+
+````markdown @embed.style(height: 600px; min-width: 100%; border: 1px black solid)
+# Systematik hinter den Befehlen
+
+__Ein Link__
++ https://www.ub.tu-berlin.de/
++ [Universitätsbibliothek der TU Berlin](https://www.ub.tu-berlin.de/)
+
+__Ein externes Bild__ (!)
+![image](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)
+
+__Ein Tondokument__ (?)
+?[sound](https://www.w3schools.com/html/horse.mp3)
+
+__Ein Video__ (!?)
+!?[video](https://www.youtube.com/watch?v=5HJVfp5c0kE)
+
+__Ein Irgendwas__ (??)
+??[webapp](https://oersi.org)
+````
+
+> [!TIP]
+> **Die Faustregel:** `!` steht für das Auge (**Bild**), `?` steht für das Ohr (**Audio**) — und `!?` bzw. `??` kombinieren beides zu **Video** und **eingebetteter Ressource**. Ein und dieselbe URL, nur ein anderes Vorzeichen.
+
+> [!IMPORTANT]
+> **Und hier schlägt die Brücke zum Verbreiten:** Ein `![…]`-Bild oder eine lokale Audiodatei *reist nicht von allein mit*, wenn Sie nur die Markdown-Datei weitergeben. Genau deshalb gibt es weiter unten Wege wie **ZIP** (packt alle Bilder mit ein) und das **GitHub-Repository** (hält Quelle *und* Medien zusammen). Eingebettete Ressourcen per `??` liegen dagegen ohnehin extern — sie reisen als URL mit.
+
 ## Vorab: KI als Co-Autorin für LiaScript-Kurse
 
 Viele der Handgriffe, die Sie in [Phase 3](03_Anwenden.md) selbst gemacht haben, übernehmen inzwischen KI-Assistenten. Vor zwei Jahren hieß die Antwort auf „Wie schreibe ich einen LiaScript-Kurs?" noch: *„Cheat Sheet öffnen, Syntax nachschlagen, ausprobieren."* Heute heißt sie zunehmend: *„Beschreiben Sie der KI, was Sie vermitteln wollen — und prüfen Sie die Vorlage."*
@@ -106,6 +138,10 @@ GitHub ist der Königsweg — aber nicht immer der schnellste. Drei weitere Wege
 > Der LiveEditor kann **direkt zu GitHub** veröffentlichen und aktualisieren — Import, Publish, Push und Pull, alles aus dem Editor heraus. Ein lokal installiertes `git` brauchen Sie dafür **nicht** mehr.
 
 LiveDemo mit dem heutigen Kursmaterial: [github.com/LiaPlayground/TUBerlin_UB_2026](https://github.com/LiaPlayground/TUBerlin_UB_2026)
+
+Dafür brauchen Sie einen Github-Account und ein **Personal Access Token** (PAT) mit den Rechten `repo` (für *Publish*) oder `contents: read/write` (für *Push*). Das Token wird einmalig im LiveEditor hinterlegt, danach können Sie direkt aus dem Menü ⋮ → Tab „GitHub" arbeiten.
+
+https://github.com/settings/tokens/new
 
 ### ZIP-Export — die vollständige Quelle als Archiv
 

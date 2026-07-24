@@ -223,7 +223,7 @@ daten = pd.DataFrame({
 })
 
 # Berechne die Vormerkungsquote als neue Spalte.
-# Entfernen Sie in der nächsten Zeile das führende '# ' (Raute + Leerzeichen),
+# Entfernen Sie in der Zeile 14 das führende '# ' (Raute + Leerzeichen),
 # damit Python die Zeile nicht mehr als Kommentar überspringt:
 # daten["Vormerkungsquote"] = daten["Vormerkungen"] / daten["Ausleihen"]
 print(daten)
