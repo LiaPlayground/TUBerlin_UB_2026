@@ -11,3 +11,11 @@ node_modules/
 
 # Exporte (bei Bedarf entfernen, wenn SCORM-Pakete eingecheckt werden sollen)
 *.zip
+
+# LaTeX-Nebenprodukte (cheatSheet/) — die .tex-Quelle und die .pdf bleiben
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
