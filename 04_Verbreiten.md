@@ -70,7 +70,7 @@ Die niedrigschwellige Variante: Eine einzige Markdown-Datei, [**LiaSkill**](http
 
 | Schritt | Was tun?                                                                                            |
 | ------- | --------------------------------------------------------------------------------------------------- |
-| 1       | [SKILL.md](https://github.com/LiaScript/LiaSkill/blob/main/SKILL.md) als Datei in den Chat ziehen   |
+| 1       | [SKILL.md](https://github.com/LiaScript/LiaSkill/blob/main/liascript-skill/SKILL.md) als Datei in den Chat ziehen |
 | 2       | Beschreiben: *„Erstelle eine Schulung zu …, Zielgruppe …, mit … Quizzen und … Differenzierung."*    |
 | 3       | Ergebnis im [LiveEditor](https://liascript.github.io/LiveEditor/) prüfen, anpassen                  |
 
