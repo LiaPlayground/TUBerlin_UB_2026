@@ -1,0 +1,13 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+*~
+.vscode/
+.idea/
+
+# LiaScript / Node
+node_modules/
+*.log
+
+# Exporte (bei Bedarf entfernen, wenn SCORM-Pakete eingecheckt werden sollen)
+*.zip
