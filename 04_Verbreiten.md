@@ -20,6 +20,8 @@ comment:  Phase 4 des Workshops "Interaktive OER mit LiaScript" an der
 
 repository: https://github.com/LiaPlayground/TUBerlin_UB_2026
 
+import:    https://raw.githubusercontent.com/LiaTemplates/LiveEdit-Embeddings/refs/tags/0.0.1/README.md
+
 attribute: Interaktive OER mit LiaScript
            von Sebastian Zug und André Dietrich
            ist lizenziert unter [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
@@ -62,20 +64,20 @@ Probieren Sie es in der eingebetteten Vorschau aus — **dieselbe Text-URL, vier
 # Systematik hinter den Befehlen
 
 __Ein Link__
-+ https://www.ub.tu-berlin.de/
-+ [Universitätsbibliothek der TU Berlin](https://www.ub.tu-berlin.de/)
++ https://tu-freiberg.de/
++ [TUBAF](https://tu-freiberg.de/)
 
 __Ein externes Bild__ (!)
-![image](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)
+[image](https://tu-freiberg.de/sites/default/files/2024-04/732_Silber_Calcit_01_HM.jpg)
 
 __Ein Tondokument__ (?)
-?[sound](https://www.w3schools.com/html/horse.mp3)
+[sound](https://open.spotify.com/album/69cO89tra0gETaDHwsKZo5)
 
 __Ein Video__ (!?)
-!?[video](https://www.youtube.com/watch?v=5HJVfp5c0kE)
+[video](https://www.youtube.com/watch?v=TJHEDKSahoM)
 
 __Ein Irgendwas__ (??)
-??[webapp](https://oersi.org)
+[webapp](https://sketchfab.com/3d-models/familienschacht-freiberg-germany-7c7d30506c554385a4a4321366e2e601)
 ````
 
 > [!TIP]
